@@ -1,0 +1,31 @@
+﻿ROW_ID,PERSON_ID,DATE_OF_DEATH,S_UNDERLYING_COD_ICD10,S_COD_CODE_1,S_COD_CODE_2,EXPECTED_QUALIFY,EXPECTED_MI_COUNT,EXPECTED_MI_DATE,EXPECTED_TERMINAL_NODE,EXPECTED_TERMINAL_NODE_DESCRIPTION,COMMENTS,DUPLICATED_ID,MI_CODE
+1,D020,05/04/2019,I21,F63,G77,FALSE,0,,1,Excluded as event - will have been captured in HES-APC,Corresponding record in HES_APC documenting an in hospital death with discharge date within 1 day of death date AND dismeth 4 (patient died) or disdest 79 (patient died),0,1
+2,D021,26/05/2019,I21,,,FALSE,0,,2,Excluded as death assumed to relate to previously recorded MI,Recorded MI event less than 7 days prior to death date (but not with discharge date within 1 day of death and disdest  79 or distmeth 4,0,1
+3,D022,13/02/2019,I21,D95,,TRUE,1,13/02/2019,3,Single MI event with date of death as the event date,,0,1
+4,D023,02/03/2019,K18,I21,,TRUE,1,02/03/2019,3,Single MI event with date of death as the event date,,0,1
+5,D024,05/04/2019,I22,,,TRUE,1,05/04/2019,3,Single MI event with date of death as the event date,,0,1
+6,D025,26/04/2020,I21,,,TRUE,1,26/04/2020,3,Single MI event with date of death as the event date,,0,1
+7,D026,30/05/2020,L66,I21,,TRUE,1,30/05/2020,3,Single MI event with date of death as the event date,,0,1
+8,D027,13/06/2020,I22,I21,,FALSE,0,,2,Excluded as death assumed to relate to previously recorded MI,Recorded MI event less than 7 days prior to death date (but not with discharge date within 1 day of death and disdest  79 or distmeth 4,0,1
+9,D028,22/06/2021,O25,I21,,TRUE,1,22/06/2021,3,Single MI event with date of death as the event date,,0,1
+10,D029,03/07/2021,I21,,,FALSE,0,,1,Excluded as event - will have been captured in HES-APC,Corresponding record in HES_APC documenting an in hospital death with discharge date within 1 day of death date AND dismeth 4 (patient died) or disdest 79 (patient died),0,1
+11,D030,14/07/2021,A28,I22,,TRUE,1,14/07/2021,3,Single MI event with date of death as the event date,,0,1
+12,D031,19/07/2021,I22,L93,,TRUE,1,19/07/2021,3,Single MI event with date of death as the event date,,0,1
+13,D031,20/07/2021,I21,,,TRUE,1,19/07/2021,3,Single MI event with date of death as the event date,,1,1
+14,D032,25/08/2022,I22,M54,,FALSE,0,,1,Excluded as event - will have been captured in HES-APC,Corresponding record in HES_APC documenting an in hospital death with discharge date within 1 day of death date AND dismeth 4 (patient died) or disdest 79 (patient died),0,1
+15,D033,16/09/2022,I21,,,TRUE,1,16/09/2022,3,Single MI event with date of death as the event date,,0,1
+16,D034,22/09/2022,I22,,,TRUE,1,22/09/2022,3,Single MI event with date of death as the event date,,0,1
+17,D035,27/09/2022,J43,I21,I22,TRUE,1,27/09/2022,3,Single MI event with date of death as the event date,,0,1
+18,D036,15/10/2022,I21,C85,,TRUE,1,15/10/2022,3,Single MI event with date of death as the event date,,0,1
+19,D037,28/10/2022,I21,I22,J78,FALSE,0,,2,Excluded as death assumed to relate to previously recorded MI,Recorded MI event less than 7 days prior to death date (but not with discharge date within 1 day of death and disdest  79 or distmeth 4,0,1
+20,D038,30/10/2022,I22,,,TRUE,1,30/10/2022,3,Single MI event with date of death as the event date,,0,1
+21,D039,07/11/2023,I22,,,FALSE,0,,1,Excluded as event - will have been captured in HES-APC,Corresponding record in HES_APC documenting an in hospital death with discharge date within 1 day of death date AND dismeth 4 (patient died) or disdest 79 (patient died),0,1
+22,D040,12/11/2023,I21,I22,,FALSE,0,,2,Excluded as death assumed to relate to previously recorded MI,Recorded MI event less than 7 days prior to death date (but not with discharge date within 1 day of death and disdest  79 or distmeth 4,0,1
+23,D041,01/12/2023,I22,T83,,TRUE,1,01/12/2023,3,Single MI event with date of death as the event date,,0,1
+24,D042,05/01/2023,I21,I22,,FALSE,0,,2,Excluded as death assumed to relate to previously recorded MI,Recorded MI event less than 7 days prior to death date (but not with discharge date within 1 day of death and disdest  79 or distmeth 4,0,1
+25,D043,19/02/2023,I21,,,TRUE,1,19/02/2023,3,Single MI event with date of death as the event date,Corresponding HES MI  >7 days prior to to death so case not excluded,0,1
+26,D044,30/06/2023,I21,L45,,FALSE,0,,2,Excluded as death assumed to relate to previously recorded MI,Recorded MI event less than 7 days prior to death date (but not with discharge date within 1 day of death and disdest  79 or distmeth 4,0,1
+27,D044,30/06/2023,L45,,,FALSE,0,,2,Excluded as death assumed to relate to previously recorded MI,Recorded MI event less than 7 days prior to death date (but not with discharge date within 1 day of death and disdest  79 or distmeth 4,1,0
+28,D045,19/07/2023,L25,J85,I21,FALSE,0,,1,Excluded as event - will have been captured in HES-APC,Corresponding record in HES_APC documenting an in hospital death with discharge date within 1 day of death date AND dismeth 4 (patient died) or disdest 79 (patient died),0,1
+29,D046,23/07/2023,I21,,,FALSE,0,,1,Excluded as event - will have been captured in HES-APC,Corresponding record in HES_APC documenting an in hospital death with discharge date within 1 day of death date AND dismeth 4 (patient died) or disdest 79 (patient died),0,1
+30,D047,09/08/2023,T67,,,FALSE,0,,0,Not an MI event,Episode is not an MI event ,0,0

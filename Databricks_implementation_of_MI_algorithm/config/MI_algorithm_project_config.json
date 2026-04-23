@@ -1,0 +1,10 @@
+{
+    "project_name": "hds_jf_score_cvd_mi",
+    "project_folder": "/Workspace/Repos//hds_jf_score_cvd_mi/databricks",
+    "project_start_date": "2024-07-14",
+    "project_end_date": null,
+    "users": [
+        {"name": "James Farrell (BHF HDS)", "email": ""},
+        {"name": "Laura Sherlock (BHF HDS)", "email": ""}
+    ]
+}
