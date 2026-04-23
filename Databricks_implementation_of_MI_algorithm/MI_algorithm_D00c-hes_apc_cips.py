@@ -60,7 +60,7 @@ hes_apc_cips_episodes = (
     .withColumn('previous_admidate', f.lag('admidate').over(window_p_spell_grouping))
     .withColumn('previous_epistart', f.lag('epistart').over(window_p_spell_grouping))
     .withColumn('previous_dismeth', f.lag('dismeth').over(window_p_spell_grouping))
-    .withColumn('previous_epiend', f.lag('dismeth').over(window_p_spell_grouping))
+    .withColumn('previous_epiend', f.lag('epiend').over(window_p_spell_grouping))
 )
 
 # An episode is considered to be part of the same provider spell as the previous 
