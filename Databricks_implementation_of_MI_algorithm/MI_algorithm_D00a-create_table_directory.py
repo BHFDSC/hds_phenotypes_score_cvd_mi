@@ -4,7 +4,7 @@
 # COMMAND ----------
 
 import json
-from hds_functions import write_json_file
+from functions import write_json_file
 
 # Database names
 db = ''
