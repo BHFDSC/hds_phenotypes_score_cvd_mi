@@ -1,13 +1,17 @@
 # Databricks notebook source
-# MAGIC %run ./project_config
+# MAGIC %run "./project_config"
 
 # COMMAND ----------
 
-# MAGIC %run ./parameters
+# MAGIC %run "./parameters"
 
 # COMMAND ----------
 
-from hds_functions import load_table, save_table, read_csv_file, write_csv_file, map_column_values
+# MAGIC %run "./functions/hds_functions"
+
+# COMMAND ----------
+
+from functions import load_table, save_table, read_csv_file, write_csv_file, map_column_values
 import re
 from pyspark.sql import functions as f
 import pyspark.sql.types as t

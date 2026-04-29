@@ -1,9 +1,18 @@
 # Databricks notebook source
-# MAGIC %run ./project_config
+# MAGIC %run "./project_config"
 
 # COMMAND ----------
 
-from hds_functions import load_table, save_table
+# MAGIC %run "./parameters"
+
+
+# COMMAND ----------
+
+# MAGIC %run "./functions/hds_functions"
+
+# COMMAND ----------
+
+from functions import load_table, save_table
 from pyspark.sql import functions as f
 from pyspark.sql.window import Window
 
