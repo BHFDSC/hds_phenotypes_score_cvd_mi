@@ -3,12 +3,7 @@
 
 # COMMAND ----------
 
-# MAGIC %run "./parameters"
-
-
-# COMMAND ----------
-
-# MAGIC %run "./functions/hds_functions"
+# %run "./functions/hds_functions"
 
 # COMMAND ----------
 
@@ -19,6 +14,10 @@ import pyspark.sql.types as t
 from pyspark.sql.window import Window
 import pandas as pd
 from functools import reduce
+
+# COMMAND ----------
+
+# MAGIC %run ./parameters
 
 # COMMAND ----------
 
@@ -56,10 +55,6 @@ deaths_mi = (
     .filter(f"(mi_cod) AND (date_of_death >= '{study_start_date}') AND (date_of_death <= '{study_end_date}')")
 )
 
-
-# COMMAND ----------
-
-count_var(deaths_mi, 'person_id')
 
 # COMMAND ----------
 

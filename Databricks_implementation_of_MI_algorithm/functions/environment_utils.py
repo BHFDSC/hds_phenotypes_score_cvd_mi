@@ -30,7 +30,7 @@ def get_spark_session():
     return spark_session
 
 
-def resolve_path(path: str, repo: str = None) -> str:
+def resolve_path(path: str, repo: str = None, writable: bool = False) -> str:
     """
     Resolve the path to a file, handling different formats and repositories.
 
@@ -41,19 +41,46 @@ def resolve_path(path: str, repo: str = None) -> str:
     Returns:
     - resolved_path (str): Resolved absolute path to the file.
     """
+    # assert (
+    #     (os.path.isabs(path) and repo is None) or 
+    #     (path.startswith("./") and repo is None) or 
+    #     (repo is not None and not (path.startswith("./") or os.path.isabs(path)))
+    # ), "Specify either an absolute path, a relative path with './', or a path within a repo, not a combination of them."
+
+    # if path.startswith("./"):
+    #     project_folder = os.environ.get('PROJECT_FOLDER', None)
+    #     assert project_folder is not None, "Environment variable 'PROJECT_FOLDER' not set. Ensure './project_setup' is run at the start of the notebook."
+    #     resolved_path = os.path.join(project_folder, path[2:])
+    # elif repo is not None:
+    #     resolved_path = pkg_resources.resource_filename(repo, path)
+    # else:
+    #     resolved_path = path
+
     assert (
         (os.path.isabs(path) and repo is None) or 
         (path.startswith("./") and repo is None) or 
         (repo is not None and not (path.startswith("./") or os.path.isabs(path)))
-    ), "Specify either an absolute path, a relative path with './', or a path within a repo, not a combination of them."
+    ), "Specify either an absolute path, a relative path with './', or a path within a repo."
 
     if path.startswith("./"):
-        project_folder = os.environ.get('PROJECT_FOLDER', None)
-        assert project_folder is not None, "Environment variable 'PROJECT_FOLDER' not set. Ensure './project_setup' is run at the start of the notebook."
-        resolved_path = os.path.join(project_folder, path[2:])
+        if writable:
+            folder = os.environ.get('PROJECT_RUNTIME_FOLDER', None)
+            assert folder is not None, (
+                "Environment variable 'PROJECT_RUNTIME_FOLDER' not set. "
+                "Ensure './project_config' is run at the start of the notebook."
+            )
+        else:
+            folder = os.environ.get('PROJECT_FOLDER', None)
+            assert folder is not None, (
+                "Environment variable 'PROJECT_FOLDER' not set. "
+                "Ensure './project_config' is run at the start of the notebook."
+            )
+        resolved_path = os.path.join(folder, path[2:])
     elif repo is not None:
         resolved_path = pkg_resources.resource_filename(repo, path)
     else:
         resolved_path = path
 
     return resolved_path
+
+

@@ -86,7 +86,7 @@ def write_json_file(data: Dict[str, Any], path: str, repo: str = None, indent: i
         >>> write_json_file(data, path="in/shared/repo.json", repo="common_repo")
     """
     # Resolve the path
-    resolved_path = resolve_path(path, repo)
+    resolved_path = resolve_path(path, repo, writable = True)
 
     # Check if the directory exists
     directory = os.path.dirname(resolved_path)

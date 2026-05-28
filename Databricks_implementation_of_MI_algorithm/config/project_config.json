@@ -1,6 +1,7 @@
 {
     "project_name": "hds_jf_score_cvd_mi",
-    "project_folder": "/Workspace/Repos//hds_jf_score_cvd_mi/databricks",
+    "project_folder": "/Workspace/Repos//hds_jf_score_cvd_mi/databricks/pipeline",
+    "project_runtime_folder": "/Workspace/Users/{username}/hds_jf_score_cvd_mi/runtime",
     "project_start_date": "2024-07-14",
     "project_end_date": null,
     "users": [

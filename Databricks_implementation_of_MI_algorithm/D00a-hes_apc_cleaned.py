@@ -1,17 +1,30 @@
 # Databricks notebook source
 # MAGIC %run "./project_config"
 
+# COMMAND ----------
+
+import os
+print("PROJECT_FOLDER:", os.environ.get('PROJECT_FOLDER'))
+print("PROJECT_RUNTIME_FOLDER:", os.environ.get('PROJECT_RUNTIME_FOLDER'))
 
 # COMMAND ----------
 
-# MAGIC %run "./functions/hds_functions"
+import os
+runtime = os.environ.get('PROJECT_RUNTIME_FOLDER')
+print("config dir exists:", os.path.exists(f'{runtime}/config'))
+print("table_directory exists:", os.path.exists(f'{runtime}/config/table_directory.json'))
 
 # COMMAND ----------
 
 from functions import load_table, save_table, read_csv_file, write_csv_file
 import re
+import os
 from pyspark.sql import functions as f
 from pyspark.sql.window import Window
+
+# COMMAND ----------
+
+_runtime_folder = os.environ['PROJECT_RUNTIME_FOLDER']
 
 # COMMAND ----------
 
@@ -273,7 +286,11 @@ flowchart = (
 )
 
 # Save as .csv
-(flowchart.toPandas().to_csv('outputs/flowchart_1.csv', index = False))
+#(flowchart.toPandas().to_csv('outputs/flowchart_1.csv', index = False))
+flowchart.toPandas().to_csv(
+    f'{_runtime_folder}/outputs/flowchart_hes_cleaning.csv', 
+    index=False
+)
 
 # COMMAND ----------
 

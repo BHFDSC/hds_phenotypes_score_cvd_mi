@@ -5,11 +5,9 @@
 
 # MAGIC %run "./parameters"
 
-
 # COMMAND ----------
 
-# MAGIC %run "./functions/hds_functions"
-
+# %run "./functions/hds_functions"
 
 # COMMAND ----------
 

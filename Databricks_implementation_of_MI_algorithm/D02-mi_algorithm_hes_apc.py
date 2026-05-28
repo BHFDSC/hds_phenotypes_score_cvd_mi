@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %run "./functions/hds_functions"
+# %run "./functions/hds_functions"
 
 # COMMAND ----------
 
@@ -376,6 +376,22 @@ display(
         f.countDistinct('person_id').alias('n_id')
     )
 )
+
+# COMMAND ----------
+
+hes_apc_algo_mi_patients_summary = (
+    hes_apc_algo_mi_patients
+    .groupBy('terminal_node', 'terminal_node_description')
+    .agg(
+        f.count('*').alias('n'),
+        f.countDistinct('person_id').alias('n_id')
+    )
+)
+
+hes_apc_algo_mi_patients_summary.agg(f.sum('n').alias('total_n')).show() # 2,412,870
+
+#333,733 MI events
+
 
 # COMMAND ----------
 

@@ -3,8 +3,7 @@
 
 # COMMAND ----------
 
-# MAGIC %run "./functions/hds_functions"
-
+# %run "./functions/hds_functions"
 
 # COMMAND ----------
 
@@ -335,9 +334,3 @@ hes_apc_cips_episodes = (
 )
 
 save_table(df = hes_apc_cips_episodes, table = 'hes_apc_cips_episodes')
-
-# COMMAND ----------
-
-display(load_table('hes_apc_cips_episodes'))
-display(load_table('hes_apc_cips_provider_spells'))
-display(load_table('hes_apc_cips_cips'))

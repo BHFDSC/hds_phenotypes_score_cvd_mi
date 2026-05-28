@@ -3,12 +3,7 @@
 
 # COMMAND ----------
 
-# MAGIC %run "./parameters"
-
-
-# COMMAND ----------
-
-# MAGIC %run "./functions/hds_functions"
+# %run "./functions/hds_functions"
 
 # COMMAND ----------
 
@@ -29,7 +24,6 @@ deaths_mi = (
     
 )
 
-display(deaths_mi)
 
 # COMMAND ----------
 
@@ -42,7 +36,6 @@ hes_apc_mi = (
     .select('person_id', 'mi_date', f.lit('HES-APC').alias('data_source'))
 )
 
-display(hes_apc_mi)
 
 # COMMAND ----------
 
@@ -93,11 +86,15 @@ save_table(df = mi_events, table = 'mi_events')
 
 mi_events = load_table('mi_events')
 
-display(
-    mi_events
+mi_summary = (mi_events
     .groupBy('mi_index', 'data_source')
     .agg(
         f.count('*').alias('n')
     )
     .orderBy('mi_index', 'data_source')
 )
+
+
+# COMMAND ----------
+
+mi_summary.select(f.sum("n")).show()

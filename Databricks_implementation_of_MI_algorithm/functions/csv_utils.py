@@ -74,7 +74,7 @@ def write_csv_file(df: DataFrame, path: str, repo: str = None, index: bool = Fal
                          "Consider using save_table() function to save to the database.")
 
     # Resolve the path
-    resolved_path = resolve_path(path, repo)
+    resolved_path = resolve_path(path, repo, writable = True)
 
     # Check if the directory exists
     directory = os.path.dirname(resolved_path)
