@@ -187,7 +187,7 @@ hes_apc_cips_provider_spells = load_table('hes_apc_cips_provider_spells')
 # Obtain previous epiend and disdest 
 window_cips_ordered = (
     Window.partitionBy('person_id')
-    .orderBy('p_spell_admidate', 'p_spell_disdate', 'procode5', 'p_spell_order')
+    .orderBy('p_spell_admidate','p_spell_epistart', 'p_spell_disdate', 'procode5', 'p_spell_order')
 )
 
 hes_apc_cips_provider_spells = (
@@ -228,7 +228,7 @@ hes_apc_cips_provider_spells = (
 # Calculate spell order, spell count, first and last spell flags within each CIPS
 window_cips_id_ordered = (
     Window.partitionBy('cips_id')
-    .orderBy('p_spell_admidate', 'p_spell_disdate', 'procode5', 'p_spell_order')
+    .orderBy('p_spell_admidate', 'p_spell_epistart','p_spell_disdate', 'procode5', 'p_spell_order')
 )
 
 window_cips_id_grouped = (
